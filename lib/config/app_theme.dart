@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'app_colors.dart';
+
+class AppTheme {
+  static ThemeData get light => ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.primary,
+          brightness: Brightness.light,
+        ).copyWith(
+          surface: AppColors.backgroundLight,
+        ),
+        scaffoldBackgroundColor: AppColors.backgroundLight,
+        textTheme: GoogleFonts.manropeTextTheme(),
+      );
+
+  static ThemeData get dark => ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.primary,
+          brightness: Brightness.dark,
+        ).copyWith(
+          surface: AppColors.backgroundDark,
+        ),
+        scaffoldBackgroundColor: AppColors.backgroundDark,
+        textTheme: GoogleFonts.manropeTextTheme(
+          ThemeData(brightness: Brightness.dark).textTheme,
+        ),
+      );
+}
+
